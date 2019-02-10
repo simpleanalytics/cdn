@@ -19,7 +19,7 @@
     })
 
     window.onresize = function() {
-      document.querySelectorAll('[data-sa-graph] iframe').forEach(function(iframe) {
+      document.querySelectorAll('[data-sa-graph-url] iframe').forEach(function(iframe) {
         iframe.contentWindow.postMessage('true', '*')
       })
     }
