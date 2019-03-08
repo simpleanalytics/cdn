@@ -79,7 +79,7 @@
           return rv;
         };
       };
-      hisPushState = stateListener('pushState');
+      his.pushState = stateListener('pushState');
       window.addEventListener('pushState', function() {
         post(true);
       });
