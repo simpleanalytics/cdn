@@ -1,0 +1,9 @@
+<svg width="38px" height="36px" viewBox="0 0 38 36" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke-linecap="square" fill="none" stroke="#00C5E3" stroke-width="3">
+  <g transform="translate(1, 1)">
+    <polyline points="35.5 22.5 35.5 33.5 24.5 33.5"></polyline>
+    <polyline transform="translate(30.000000, 6.000000) rotate(-90.000000) translate(-30.000000, -6.000000) " points="35.5 0.5 35.5 11.5 24.5 11.5"></polyline>
+    <polyline transform="translate(6.000000, 28.000000) rotate(-270.000000) translate(-6.000000, -28.000000) " points="11.5 22.5 11.5 33.5 0.5 33.5"></polyline>
+    <circle cx="18" cy="17" r="6"></circle>
+    <polyline transform="translate(6.000000, 6.000000) rotate(-180.000000) translate(-6.000000, -6.000000) " points="11.5 0.5 11.5 11.5 0.5 11.5"></polyline>
+  </g>
+</svg>
