@@ -56,6 +56,12 @@
       if (doc.referrer && !isPushState) data.referrer = doc.referrer;
       if (window.innerWidth) data.width = window.innerWidth;
 
+      try {
+        data.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+      } catch (error) {
+        // nothing
+      }
+
       var request = new XMLHttpRequest();
       request.open('POST', baseUrl, true);
 
