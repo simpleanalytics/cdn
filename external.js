@@ -50,7 +50,7 @@
       var refMatches = loc.search.match(/[?&](utm_source|source|ref)=([^?&]+)/gi);
       var refs = refMatches ? refMatches.map(function(m) { return m.split('=')[1] }) : [];
 
-      var data = { source: 'js', url: url };
+      var data = { url: url };
       if (userAgent) data.ua = userAgent;
       if (refs && refs[0]) data.urlReferrer = refs[0];
       if (doc.referrer && !isPushState) data.referrer = doc.referrer;
