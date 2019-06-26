@@ -7,7 +7,8 @@
   var host = loc.hostname
   var doc = window.document
   var con = window.console
-  var stringify = JSON.stringify
+  var json = JSON
+  var stringify = json.stringify
 
   try {
     var userAgent = nav.userAgent
@@ -41,14 +42,14 @@
       if (refs && refs[0]) return refs[0]
     }
 
-    var post = function(data, json) {
+    var post = function(data, isJson) {
       var request = new XMLHttpRequest()
       request.open('POST', hostname + '/post', true)
 
       // We use content type text/plain here because we don't want to send an
       // pre-flight OPTIONS request
-      request.setRequestHeader('Content-Type', 'text/plain; charset=UTF-8')
-      request.send(json === false ? data : JSON.stringify(data))
+      request.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8')
+      request.send(isJson === false ? data : stringify(data))
     }
 
     var postVisit = function(isPushState) {
@@ -134,7 +135,7 @@
     }
 
     // Get previous events
-    var getEvents = function() { return JSON.parse(storage.getItem('events') || '[]') }
+    var getEvents = function() { return json.parse(storage.getItem('events') || '[]') }
     var saveEvents = function(events) { return storage.setItem('events', stringify(events) || '[]') }
 
     var postEvent = function(event, wait) {
@@ -160,7 +161,7 @@
       }
     }
 
-    if (queue) {
+    if (queue.length) {
       for (var index = 0; index < queue.length; index++) postEvent(queue[index][0], true)
       post(storage.getItem('events'), false)
     }
